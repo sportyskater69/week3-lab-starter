@@ -1,6 +1,8 @@
+import { Delivery, School } from "./common";
 // TODO: Create a type for program ids, which should be strings
-
+type ProgramID = string;
 // TODO: Create a type for credential types, which can either be "Diploma", "Degree", or "Certificate"
+type credential = "Diploma" | "Degree" | "Certificate"
 
 // TODO: Create an interface for programs
 // The interface should include the following properties:
@@ -14,4 +16,14 @@
 // an optional array of career paths
 // an optional note
 
-export interface Program {}
+export interface Program {
+  ID: ProgramID;
+  name: string;
+  credential: credential;
+  school: School;
+  length: string;
+  credit: number;
+  method: Delivery;
+  careerPath?: string[];
+  note: string;
+}
